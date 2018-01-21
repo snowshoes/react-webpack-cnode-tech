@@ -39,7 +39,15 @@ if (isDev) {
   config.devServer = {
     host: '0.0.0.0',
     port: '8888',
-    contentBase: PATHS.output
+    contentBase: PATHS.output,
+    // hot: true,
+    overlay: {
+      errors: true
+    },
+    publicPath: '/public/',
+    historyApiFallback: {
+      index: '/public/index.html'
+    }
   };
 }
 

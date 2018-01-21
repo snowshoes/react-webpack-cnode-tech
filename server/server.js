@@ -30,7 +30,7 @@ app.use('/public', express.static(PATHS.static));
 
 app.get('*', (req, res) => {
   const appString = renderToString(serverEntry);
-  const renderedHTML = template.replace('<app></app>', appString);
+  const renderedHTML = template.replace('<!-- app -->', appString);
   res.send(renderedHTML);
 });
 
