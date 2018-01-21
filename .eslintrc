@@ -28,6 +28,24 @@
     "object-curly-spacing": 1,
     "arrow-body-style": 0,
     "prettier/prettier": "error",
+    "arrow-parens": ["error", "always"],
+    "react/jsx-wrap-multilines": [
+      "error",
+      {
+        "declaration": false,
+        "assignment": "parens",
+        "return": "parens",
+        "arrow": "parens"
+      }
+    ],
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectExpression": "always",
+        "ObjectPattern": { "multiline": true, "minProperties": 2 },
+        "consistent": true
+      }
+    ],
     "react/jsx-space-before-closing": 0,
     "react/jsx-indent": 0,
     "no-unused-expressions": 0,

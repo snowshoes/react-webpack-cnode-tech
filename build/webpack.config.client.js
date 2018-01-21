@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 const PATHS = {
@@ -35,12 +36,16 @@ const config = {
   ]
 };
 
+// only applied for dev
 if (isDev) {
+  config.entry = {
+    app: ['react-hot-loader/patch', PATHS.entry]
+  };
   config.devServer = {
     host: '0.0.0.0',
     port: '8888',
     contentBase: PATHS.output,
-    // hot: true,
+    hot: true,
     overlay: {
       errors: true
     },
@@ -49,6 +54,8 @@ if (isDev) {
       index: '/public/index.html'
     }
   };
+
+  config.plugins.push(new webpack.HotModuleReplacementPlugin());
 }
 
 module.exports = config;

@@ -1,3 +1,4 @@
 {
-  "presets": [["env", { "target": { "node": "current" } }], "react"]
+  "presets": [["env", { "target": { "node": "current" } }], "react"],
+  "plugins": ["react-hot-loader/babel"]
 }
