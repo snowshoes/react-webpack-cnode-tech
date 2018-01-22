@@ -18,7 +18,7 @@ const config = {
     //[] means variable in webpack
     filename: '[name].[hash].js',
     path: PATHS.output,
-    publicPath: '/public'
+    publicPath: '/public/'
   },
   module: {
     rules: [
