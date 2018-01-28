@@ -21,7 +21,6 @@ import path from 'path';
 // https://github.com/react-boilerplate/react-boilerplate/issues/1250
 // How to avoid undef-var eslint check for global variable in webpack ?
 // https://stackoverflow.com/questions/39053562/eslint-no-undef-and-webpack-plugin?rq=1
-console.log(process.env.TWO);
 const isDev = process.env.NODE_ENV === 'development';
 
 const PATHS = {
