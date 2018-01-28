@@ -21,7 +21,14 @@ const config = {
     publicPath: '/public/'
   },
   module: {
+    // eslint jsx? code before transpile
     rules: [
+      {
+        enforce: 'pre',
+        test: /.jsx?$/,
+        loader: 'eslint-loader',
+        exclude: [PATHS.modules]
+      },
       {
         test: /.jsx?$/,
         use: 'babel-loader',

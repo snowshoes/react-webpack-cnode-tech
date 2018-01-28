@@ -1,6 +1,13 @@
 const path = require('path');
 // const HTMLWebpackPlugin = require('html-webpack-plugin');
 
+const PATHS = {
+  entry: path.join(__dirname, '../client/app.js'),
+  output: path.join(__dirname, '../dist'),
+  modules: path.join(__dirname, '../node_modules'),
+  template: path.join(__dirname, '../client/template.html')
+};
+
 module.exports = {
   target: 'node',
   entry: {
@@ -15,6 +22,12 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        enforce: 'pre',
+        test: /.jsx?$/,
+        loader: 'eslint-loader',
+        exclude: [PATHS.modules]
+      },
       {
         test: /.jsx?$/,
         use: 'babel-loader',

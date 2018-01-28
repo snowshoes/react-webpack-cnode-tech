@@ -1,10 +1,3 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-// prettier-ignore
-export default class App extends Component {
-  render() {
-    return (
-      <div>This is a webpack APP with Hot Module Replacement</div>
-    );
-  }
-}
+export default () => <div>Webpack APP with Hot Module Replacement</div>;

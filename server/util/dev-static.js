@@ -50,7 +50,7 @@ serverCompiler.watch({
   // 通过 m = new Module(), m._compile(str)的方法，将字符串转化成模块module
   // ()
   const m = new Module();
-  m._compile(bundle, 'staticserver.js');
+  m._compile(bundle, 'staticserver.js'); // eslint-disable-line
 
   // 编译好之后的模块，通过module.exports.default导出
   serverBundle = m.exports.default;
