@@ -15,7 +15,7 @@ const config = {
     app: PATHS.entry
   },
   output: {
-    //[] means variable in webpack
+    // [] means variable in webpack
     filename: '[name].[hash].js',
     path: PATHS.output,
     publicPath: '/public/'
@@ -32,7 +32,18 @@ const config = {
   plugins: [
     new HTMLWebpackPlugin({
       template: PATHS.template
-    })
+    }),
+    // always expose NODE_ENV to webpack, in order to use
+    // `process.env.NODE_ENV` inside your code for environment check
+    // Uglify will automatically drop any unreachable code
+    new webpack.DefinePlugin({
+      'process.ent': {
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+        TWO: 1 + 1,
+        SOME_BOOLEAN: true
+      }
+    }),
+    new webpack.NamedModulesPlugin()
   ]
 };
 

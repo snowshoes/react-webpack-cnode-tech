@@ -97,7 +97,7 @@
     "no-octal": 2,
     "no-octal-escape": 2,
     "no-param-reassign": 2,
-    "no-process-env": 2,
+    "no-process-env": 0,
     "no-proto": 2,
     "no-redeclare": 2,
     "no-return-assign": 2,
@@ -107,7 +107,10 @@
     "no-throw-literal": 2,
     "no-unused-expressions": 2,
     "no-void": 2,
-    "no-warning-comments": [0, { "terms": ["todo", "fixme"], "location": "start" }],
+    "no-warning-comments": [
+      0,
+      { "terms": ["todo", "fixme"], "location": "start" }
+    ],
     "no-with": 2,
     "radix": 2,
     "vars-on-top": 2,
@@ -162,7 +165,10 @@
     "sort-vars": 0,
     "keyword-spacing": ["error", { "before": true }],
     "space-before-blocks": [1, "always"],
-    "space-before-function-paren": [1, { "anonymous": "always", "named": "never" }],
+    "space-before-function-paren": [
+      1,
+      { "anonymous": "always", "named": "never" }
+    ],
     "object-curly-spacing": ["error", "always", { "objectsInObjects": false }],
     "object-curly-newline": [
       "error",
@@ -182,7 +188,7 @@
     "generator-star-spacing": [2, "before"],
 
     "max-depth": [2, 3],
-    "max-len": [2, 100, 2],
+    "max-len": ["error", { "code": 80, "ignoreComments": true }],
     "max-params": [2, 5],
     "max-statements": 0,
     "no-bitwise": 0,

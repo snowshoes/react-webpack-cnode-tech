@@ -19,6 +19,9 @@ import path from 'path';
 // HOWTO: avoid process.env (eslint: no-process-env)
 // SOLUTION: webpack.DefinPlugin
 // https://github.com/react-boilerplate/react-boilerplate/issues/1250
+// How to avoid undef-var eslint check for global variable in webpack ?
+// https://stackoverflow.com/questions/39053562/eslint-no-undef-and-webpack-plugin?rq=1
+console.log(process.env.TWO);
 const isDev = process.env.NODE_ENV === 'development';
 
 const PATHS = {
@@ -44,6 +47,7 @@ if (!isDev) {
   });
 } else {
   // https://github.com/gaearon/react-hot-boilerplate/issues/103
+  // https://stackoverflow.com/questions/37487007/eslint-es6-redux-global-required-unexpected-require
   /*  eslint-disable global-require */
   const devStatic = require('./util/dev-static');
   /*  eslint-disable global-require */

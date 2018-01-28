@@ -1,5 +1,5 @@
 const path = require('path');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
+// const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   target: 'node',
@@ -7,7 +7,7 @@ module.exports = {
     app: path.join(__dirname, '../client/server-entry.js')
   },
   output: {
-    //[] means variable in webpack
+    // [] means variable in webpack
     filename: 'server-entry.js',
     path: path.join(__dirname, '../dist'),
     publicPath: '/public',

@@ -7,11 +7,9 @@
     "build:client": "webpack --config build/webpack.config.client.js",
     "build:server": "webpack --config build/webpack.config.server.js",
     "clear": "rimraf ./dist",
-    "dev:client":
-      "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js",
+    "dev:client": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js",
     "dev:server": "cross-env NODE_ENV=development babel-node server/server.js",
     "build": "npm run clear && npm run build:client && npm run build:server"
-    
   },
   "keywords": [],
   "author": "",
@@ -39,7 +37,8 @@
     "react-hot-loader": "^3.1.3",
     "rimraf": "^2.6.2",
     "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.11.1"
+    "webpack-dev-server": "^2.11.1",
+    "webpack-merge": "^4.1.1"
   },
   "dependencies": {
     "axios": "^0.17.1",

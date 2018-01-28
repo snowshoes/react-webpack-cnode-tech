@@ -7,6 +7,9 @@ const root = document.getElementById('root');
 
 // ReactDOM.hydrate(<App />, root);
 
+// Test Webpack global variables
+console.log(process.ent.TWO);
+console.log(process.ent.NODE_ENV);
 const render = (Component) => {
   ReactDOM.hydrate(
     <AppContainer>
@@ -18,7 +21,7 @@ const render = (Component) => {
 
 render(App);
 
-// https://github.com/gaearon/react-hot-boilerplate/issues/103
+// https://stackoverflow.com/questions/27732209/turning-off-eslint-rule-for-a-specific-line
 if (module.hot) {
   module.hot.accept('./App.jsx', () => {
     const NextApp = require('./App.jsx').default; // eslint-disable-line global-require

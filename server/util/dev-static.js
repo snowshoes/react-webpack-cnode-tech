@@ -32,7 +32,10 @@ serverCompiler.watch({
   statsJson.errors.forEach(error => console.error(error));
   statsJson.warnings.forEach(warning => console.warn(warning));
 
-  const bundlePath = path.join(serverConfig.output.path, serverConfig.output.filename);
+  const bundlePath = path.join(
+    serverConfig.output.path,
+    serverConfig.output.filename
+  );
 
   const bundle = mfs.readFileSync(bundlePath, 'utf-8');
   const m = new Module();
