@@ -15,6 +15,7 @@ import { renderToString } from 'react-dom/server';
 // package.json => bael-node server/server.js
 import fs from 'fs';
 import path from 'path';
+import favicon from 'serve-favicon';
 
 // HOWTO: avoid process.env (eslint: no-process-env)
 // SOLUTION: webpack.DefinPlugin
@@ -25,13 +26,16 @@ const isDev = process.env.NODE_ENV === 'development';
 
 const PATHS = {
   index: path.join(__dirname, '../dist/index.html'),
-  static: path.join(__dirname, '../dist')
+  static: path.join(__dirname, '../dist'),
+  wsicon: path.join(__dirname, '../favicon.ico')
 };
 
 const app = express();
 const PORT = 3333;
 
 // console.log(serverEntry);
+
+app.use(favicon(PATHS.wsicon));
 
 if (!isDev) {
   const template = fs.readFileSync(PATHS.index, 'utf-8');
