@@ -7,8 +7,7 @@
     "build:client": "webpack --config build/webpack.config.client.js",
     "build:server": "webpack --config build/webpack.config.server.js",
     "clear": "rimraf ./dist",
-    "dev:client":
-      "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js",
+    "dev:client": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js",
     "dev:server": "nodemon server/server.js --exec babel-node -e js",
     "build": "npm run clear && npm run build:client && npm run build:server",
     "lint": "eslint --ext .js --ext .jsx client/ server/",
@@ -53,6 +52,8 @@
     "express": "^4.16.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
     "serve-favicon": "^2.4.5"
   }
 }

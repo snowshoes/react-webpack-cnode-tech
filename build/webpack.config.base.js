@@ -10,6 +10,9 @@
 const { modules } = require('./webpack.config.paths');
 
 module.exports = {
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   module: {
     // eslint jsx? code before transpile
     rules: [
