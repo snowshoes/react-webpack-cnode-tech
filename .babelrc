@@ -1,4 +1,4 @@
 {
-  "presets": [["env", { "target": { "node": "current" } }], "react"],
-  "plugins": ["react-hot-loader/babel"]
+  "presets": [["env", { "target": { "node": "current" } }], "stage-1", "react"],
+  "plugins": ["transform-decorators-legacy", "react-hot-loader/babel"]
 }

@@ -156,7 +156,7 @@
     "no-trailing-spaces": 1,
     "no-underscore-dangle": 1,
     "one-var": [1, "never"],
-    "operator-assignment": [1, "never"],
+    "operator-assignment": 0,
     "padded-blocks": [1, "never"],
     "quote-props": [1, "as-needed"],
     "quotes": [1, "single"],
