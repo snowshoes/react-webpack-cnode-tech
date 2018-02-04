@@ -10,15 +10,16 @@ Router.post('/login', (req, res, next) => {
       accesstoken: req.body.accessToken
     })
     .then((resp) => {
-      if (resp.status === 200 && resp.data.sucess) {
+      if (resp.status === 200 && resp.data.success) {
+        console.dir(resp.data);
         req.session.user = {
           accessToken: req.body.accessToken,
-          loginName: resp.body.loginname,
+          loginName: resp.data.loginname,
           id: resp.data.id,
           avatarUrl: resp.data.avatar_url
         };
         res.json({
-          sucess: true,
+          success: true,
           data: resp.data
         });
       }
@@ -27,7 +28,7 @@ Router.post('/login', (req, res, next) => {
       if (err.response) {
         res.json({
           sucess: false,
-          data: err.response
+          data: err.response.data
         });
       } else {
         next(err);
