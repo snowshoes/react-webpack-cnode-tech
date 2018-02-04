@@ -49,6 +49,7 @@ serverCompiler.watch({
 
   // 通过 m = new Module(), m._compile(str)的方法，将字符串转化成模块module
   // ()
+  // https://stackoverflow.com/questions/17581830/load-node-js-module-from-string-in-memory
   const m = new Module();
   m._compile(bundle, 'staticserver.js'); // eslint-disable-line
 

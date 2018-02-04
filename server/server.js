@@ -16,6 +16,10 @@ import { renderToString } from 'react-dom/server';
 import fs from 'fs';
 import path from 'path';
 import favicon from 'serve-favicon';
+import bodyParser from 'body-parser';
+import session from 'express-session';
+import proxy from './util/proxy';
+import loginHandler from './util/handle-login';
 
 // HOWTO: avoid process.env (eslint: no-process-env)
 // SOLUTION: webpack.DefinPlugin
@@ -35,7 +39,23 @@ const PORT = 3333;
 
 // console.log(serverEntry);
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
+
+app.use(session({
+  maxAge: 10 * 60 * 1000,
+  // cookie id in browser
+  name: 'tid',
+  resave: false,
+  saveUninitialized: false,
+  secret: 'react cnode class'
+}));
+
 app.use(favicon(PATHS.wsicon));
+app.use('/api/user', loginHandler);
+app.use('/api', proxy);
 
 if (!isDev) {
   const template = fs.readFileSync(PATHS.index, 'utf-8');

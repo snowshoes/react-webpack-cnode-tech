@@ -1,4 +1,4 @@
 import React from 'react';
-import App from './view/App.jsx'; // eslint-disable-line
+import App from './view/App';
 
 export default <App />;
